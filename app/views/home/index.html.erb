@@ -44,16 +44,6 @@
                         <li><a href="#works">Work</a></li>
                         <li><a href="#team">Team</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li>
-                          <% if user_signed_in? %>
-                            Logged in as <strong><%= current_user.email %></strong>.
-                            <%#= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-                            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                          <% else %>
-                            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-                            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-                          <% end %>
-                        </li>
                     </ul>
                 </nav>
         <!-- /main nav -->
@@ -87,9 +77,17 @@
           <div class="item active" style="background-image: url(/assets/banner.jpg);">
             <div class="carousel-caption">
               <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Brandi</span>!</h2>
-              <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
+              <!-- <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
               <p data-wow-duration="1000ms" class="wow slideInRight animated">We are a team of professionals</p>
 
+ -->
+               <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <h4><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></h4>
+                <% else %>
+                  <h4><%= link_to "Register", new_user_registration_path  %></h4>
+                  <h4><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></h4>
+              <% end %>
               <ul class="social-links text-center">
                 <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
                 <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
@@ -104,8 +102,15 @@
           <div class="item" style="background-image: url(/assets/banner.jpg);">
             <div class="carousel-caption">
               <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Meet<span> Team</span>!</h2>
-              <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
-              <p data-wow-duration="500ms" class="wow slideInRight animated">We are a team of professionals</p>
+              <!-- <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
+              <p data-wow-duration="500ms" class="wow slideInRight animated">We are a team of professionals</p> -->
+              <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <h4><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></h4>
+                <% else %>
+                  <h4><%= link_to "Register", new_user_registration_path  %></h4>
+                  <h4><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></h4>
+              <% end %>
 
               <ul class="social-links text-center">
                 <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
