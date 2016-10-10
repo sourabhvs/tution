@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="well" style="width: 100%;height: auto;">
+    <h2 class='heading-fix'>Employee Request</h2>
+    <div>
+      <a href="<%= employee_requests_path %>" class='btn btn-normal create-btn-position'>Back</a>
+    </div>
+    <ul class="fix-distance-show-school">
+      <li><b>Name:</b> <%= @employee_request.name %></li></br>
+      <li><b>Email:</b> <%= @employee_request.email %></li></br>
+      <li><b>Telephone:</b> <%= @employee_request.telephone %></li></br>
+      <li><b>Qualification:</b> <%= @employee_request.qualification %></li></br>
+      <li><b>Description:</b> <%= @employee_request.description %></li></br>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.fix-width-container {
+  margin-top: -170px;
+}
+.align-center-text {
+  text-align: center;
+}
+
+.fix-input-filed-center {
+  margin-left: 27% !important;
+}
+
+.text-color-fix {
+  color: black !important;
+}
+
+.create-btn-position {
+  float: right;
+  color: #fff;
+  background-color: #6fb3de;
+}
+.fix-position-table {
+  margin-top: 50px;
+}
+
+.create-admin-btn-position {
+  color: #fff;
+  background-color: #6fb3de;
+}

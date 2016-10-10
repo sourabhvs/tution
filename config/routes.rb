@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   get 'home/index'
 
@@ -15,7 +16,12 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :employee_requests
+    get '/admin' => 'admin#index', :as => :admin
+    get '/get_all_users' => 'custom_admin#get_all_users', :as => :get_all_users
+    get '/users' => 'users#index', :as => :get_users
+    get '/users/:id' => 'users#show', :as => :users_show
+    delete '/users/:id' => 'users#destroy', :as => :users_delete
 
   # Example resource route with options:
   #   resources :products do
