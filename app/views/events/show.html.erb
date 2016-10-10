@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="well" style="width: 100%;height: auto;">
+    <h2 class='heading-fix'>Event</h2>
+    <div>
+      <a href="<%= events_path %>" class='btn btn-normal create-btn-position'>Back</a>
+    </div>
+    <ul class="fix-distance-show-school">
+      <li><b>Name:</b> <%= @event.name %></li></br>
+      <li><b>Place:</b> <%= @event.place %></li></br>
+      <li><b>Date:</b> <%= @event.date %></li></br>
+      <li><b>Time:</b> <%= @event.time %></li></br>
+      <li><b>Description:</b> <%= @event.description %></li></br>
+    </ul>
+  </div>
+</div>

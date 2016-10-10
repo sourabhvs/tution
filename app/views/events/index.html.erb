@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="well" style="width: 100%;height: auto;">
+    <h2 class='heading-fix'> List of Events</h2>
+    <div>
+      <a href="<%= new_event_path %>" class='btn btn-normal create-btn-position'>Create Event</a>
+      <a href="<%= root_path %>" class='btn btn-normal create-btn-position fix-margin-btn-buts'>Back</a>
+    </div>
+
+    <div class="table-responsive list-view div-documents-list-section fix-position-table table-margin-top">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <!-- <th class="entry-num">Entry Number</th> -->
+            <th class="date">Name</th>
+            <th class="name">Place</th>
+            <th class="document-title" style="padding-right:40px;">Date</th>
+            <th class="status">Time</th>
+            <!-- <th class="action">Description</th> -->
+            <th class="action">Action</th>
+          </tr>
+        </thead>
+        <tbody class="table-body-background change-font">
+          <% @events.each do |event| %>
+            <tr>
+              <td><%= event.name %></td>
+              <td><%= event.place %></td>
+              <td><%= event.date.strftime("%d-%m-%Y") if event.date.present? %></td>
+              <td><%= event.time %></td>
+              <!-- <td><%#= event.description %></td> -->
+              <td><%= link_to 'Delete', event_path(event), method: :delete, data:{confirm: 'Are you want to delete event'}, :class=> "text-color-fix" %> | <%= link_to 'Edit', edit_event_path(event), :class=> "text-color-fix" %> | <%= link_to 'Show', event_path(event), :class=> "text-color-fix" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

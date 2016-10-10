@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+
+  get 'events/edit'
+
+  get 'events/new'
+
   devise_for :users
   get 'home/index'
 
@@ -16,7 +22,10 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+    resources :events
+    resources :documents
     resources :employee_requests
+    get '/user_events' => 'events#user_index', :as => :user_events
     get '/admin' => 'admin#index', :as => :admin
     get '/get_all_users' => 'custom_admin#get_all_users', :as => :get_all_users
     get '/users' => 'users#index', :as => :get_users
