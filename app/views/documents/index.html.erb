@@ -3,6 +3,16 @@
     <h2 class='heading-fix'> List of Documents</h2>
     <div>
       <a href="<%= root_path %>" class='btn btn-normal create-btn-position'>Back</a>
+
+      <%= form_for(@document, url: documents_path(@document)) do |f| %>
+        <%= f.file_field :report, multiple: true %>
+        <%= f.submit %>
+      <% end %>
+
+      <% @documents.each do |d| %>
+      <% binding.pry %>
+        <li><%= d.report %></li>
+      <% end %>
     </div>
   </div>
 </div>
