@@ -16,6 +16,7 @@
  *= require bootstrap.min
  *= require custom
  *= require font-awesome.min
+ *= require font-awesome
  *= require jquery.fancybox
  *= require animate
  *= require main

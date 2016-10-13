@@ -8,10 +8,12 @@
         <%= f.file_field :report, multiple: true %>
         <%= f.submit %>
       <% end %>
-
+      <ul>
       <% @documents.each do |d| %>
-        <li><%= d.name %></li>
+
+        <li><i class="fa fa-file-text fa-5x" aria-hidden="true"></i><br/><%= d.name %></li>
       <% end %>
+      </ul>
     </div>
   </div>
 </div>

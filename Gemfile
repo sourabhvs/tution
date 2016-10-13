@@ -28,6 +28,8 @@ gem 'devise'
 gem "rolify"
 
 gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+
+gem "font-awesome-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
