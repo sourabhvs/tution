@@ -2,6 +2,8 @@
 
 one:
   report: MyString
+  name: MyString
 
 two:
   report: MyString
+  name: MyString

@@ -7,8 +7,8 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new
     @document.report = params["document"]["report"]
+    @document.name = params["document"]["report"].first.original_filename
     @document.save
-    binding.pry
     redirect_to documents_path
   end
 end
