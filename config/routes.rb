@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :events
     resources :documents
+    get '/documents/download/:id' => 'documents#download', :as => :download
     resources :employee_requests
     get '/user_events' => 'events#user_index', :as => :user_events
     get '/admin' => 'admin#index', :as => :admin
