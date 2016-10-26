@@ -5,13 +5,14 @@
       <a href="<%= root_path %>" class='btn btn-normal create-btn-position'>Back</a>
 
       <%= form_for(@document, url: documents_path(@document)) do |f| %>
+        <%= f.text_field :name %>
         <%= f.file_field :report, multiple: true %>
         <%= f.submit %>
       <% end %>
       <ul>
       <% @documents.each do |d| %>
 
-        <li><i class="fa fa-file-text fa-5x" aria-hidden="true"></i><br/><%= d.name %></li>
+        <li><a class="fa fa-file-text fa-5x" onclick="window.open('<%= d.name %>')" aria-hidden="true"></a><br/><%= d.name %></li>
       <% end %>
       </ul>
     </div>

@@ -98,3 +98,8 @@ a:focus {
 .card-heading-fix {
   margin-left: 10px;
 }
+
+.color-shading-link {
+  color: #6fb3de;
+  font-size: 20px;
+}
