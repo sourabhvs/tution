@@ -1,7 +1,8 @@
+<%= render :partial => "header" %>
 <div class="container">
-<div class="well" style="width: 100%;height: auto;">
+<div class="well" style="width: 100%;height: auto;margin-top: -15px;">
 <h2 class='heading-fix'> Admin Actions</h2><br>
-<a href="<%= root_path %>" style="float:right;" class='btn btn-normal create-admin-btn-position'>Back</a><br><br>
+<a href="" style="float:right;" onclick="newDoc()" class='btn btn-normal create-admin-btn-position'>Back</a><br><br>
 <a href="<%= get_users_path %>" class='color-shading-link'>Get All Users</a><br><br>
 <a href="<%= employee_requests_path %>" class='color-shading-link'>Get All Employee Requests</a><br><br>
 
@@ -10,4 +11,10 @@
 <a href="<%= workshop_requests_path %>" class='color-shading-link'> Workshop Requests</a>
 </div>
 </div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+</script>
 

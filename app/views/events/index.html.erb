@@ -1,9 +1,10 @@
+<%= render :partial => "header" %>
 <div class="container">
-  <div class="well" style="width: 100%;height: auto;">
+  <div class="well" style="width: 100%;height: auto;margin-top: -15px;">
     <h2 class='heading-fix'> List of Events</h2>
     <div>
       <a href="<%= new_event_path %>" class='btn btn-normal create-btn-position'>Create Event</a>
-      <a href="<%= root_path %>" class='btn btn-normal create-btn-position fix-margin-btn-buts'>Back</a>
+      <a href="<%= admin_path %>" class='btn btn-normal create-btn-position fix-margin-btn-buts'>Back</a>
     </div>
 
     <div class="table-responsive list-view div-documents-list-section fix-position-table table-margin-top">

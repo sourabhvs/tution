@@ -1,5 +1,6 @@
+<%= render :partial => "header" %>
 <div class="container fix-width-container">
-  <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
+  <div class="well" style="width: 100%;margin-top: 154px;height: auto;">
     <h1 class='align-center-text'>Workshop Request</h1>
     <br>
     <%= form_for :workshop_request, url: workshop_requests_path do |f| %>
@@ -60,7 +61,7 @@
           </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <%= link_to "Cancel", root_path, :class=>"btn btn-danger" %>
+              <a herf="" onclick="newDoc()"class="btn btn-danger" >Cancel</a>
             </div>
           </div>
         </div>
@@ -70,3 +71,9 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+</script>

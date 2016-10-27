@@ -103,3 +103,50 @@ a:focus {
   color: #6fb3de;
   font-size: 20px;
 }
+
+/*Navbar styles begins*/
+.affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  /*padding-top: 70px;*/
+}
+.navbar.navbar-inverse-custom {
+  position: fixed;
+  display: block;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.navbar.navbar-inverse {
+  border-radius: 0;
+  background: #000;
+  border-color: #ccc;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #A2AAAD !important;
+}
+.glyphicon.glyphicon-menu-hamburger {
+  font-size: 26px;
+}
+.navbar-nav.navbar-custom > li > a {
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 50px 0 50px;
+}
+.navbar-nav.navbar-custom > li > a:hover {
+  text-decoration: underline;
+  color: #fff !important;
+    /*font-weight: 600;
+    margin: 0 47px 0 47px;*/
+}
+.navbar-nav.navbar-custom > li > input {
+  margin-top: 4%;
+  width: 124%;
+}
+
+.about-position {
+  margin-left: 500px;
+}
