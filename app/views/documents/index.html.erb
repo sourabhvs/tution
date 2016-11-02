@@ -11,7 +11,7 @@
       <ul style="width:20%; float:left;">
       <% @documents.each do |d| %>
 
-        <li><%= link_to ('<i class="fa fa-file-text fa-5x" aria-hidden="true"></i></br>').html_safe + d.report_identifier, download_path(d), :style => 'text-decoration: none;' %></li>
+        <li><%= link_to ('<i class="fa fa-file-text fa-5x" aria-hidden="true"></i></br>').html_safe + d.report_identifier, d.report.url, :style => 'text-decoration: none;', target: "_blank" %></li>
       <% end %>
       </ul>
     </div>
