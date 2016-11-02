@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse navbar-static-top navbar-inverse-custom" data-spy="affix">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#">
+        <img src="<%#= asset_path("navtab-logo.png") %>" class="img-responsive">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-custom">
+        <li><a href="" onclick="newDoc()">Inspire Accadamy</a></li>
+          <li class="about-position"><a href="#">About Us</a></li>
+          <li class=""><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+</script>

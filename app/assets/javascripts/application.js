@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-1.11.1.min
+//= require jquery.validate
 //= require jquery.singlePageNav.min
 //= require jquery.parallax-1.1.3
 //= require jquery.fancybox.pack
@@ -23,5 +24,6 @@
 //= require jquery.easing.min
 //= require wow.min
 //= require custom
+//= require utility
 //= require turbolinks
 //= require_tree .
