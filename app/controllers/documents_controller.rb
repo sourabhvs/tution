@@ -13,6 +13,10 @@ class DocumentsController < ApplicationController
 
   def download
     document = Document.find params[:id]
-    send_file document.report.current_path
+    send_file(document.report.current_path,
+          :filename => document.report_identifier,
+          :type => document.report.content_type,
+          :disposition => 'attachment',
+          :url_based_filename => true)
   end
 end
