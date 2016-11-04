@@ -1,5 +1,6 @@
+<%= render :partial => "header" %>
 <div class="container fix-width-container">
-  <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
+  <div class="well" style="width: 100%;margin-top: 154px;height: auto;">
     <h1 class='align-center-text'>Create Employee Request</h1>
     <br>
     <%= form_for :employee_request, url: employee_requests_path, html:{id: 'employee-request-form'} do |f| %>
@@ -37,7 +38,7 @@
         <div class="form-group">
           <div class="col-sm-12">
             <%= f.label :telephone %>
-            <%= f.text_field :telephone, class: 'form-control' %>
+            <%= f.text_field :telephone, class: "form-control test telephone-validation", "data-rule-phoneUS" => "true","data-msg-phoneUS" => "Please specify a valid telephone number (xxx-xxx-xxxx)" %>
           </div>
         </div>
       </div>
@@ -69,7 +70,7 @@
           </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <%= link_to "Cancel", root_path, :class=>"btn btn-danger" %>
+              <a herf="" onclick="newDoc()"class="btn btn-danger" >Cancel</a>
             </div>
           </div>
         </div>
@@ -79,3 +80,11 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+
+
+</script>

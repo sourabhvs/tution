@@ -1,8 +1,9 @@
+<%= render :partial => "header" %>
 <div class="container">
   <div class="well" style="width: 100%;height: auto;">
     <h2 class='heading-fix'>Upcoming Events</h2>
     <div>
-      <a href="<%= root_path %>" class='btn btn-normal create-btn-position fix-margin-btn-buts'>Back</a>
+      <a href="" onclick="newDoc()" class='btn btn-normal create-btn-position fix-margin-btn-buts'>Back</a>
     </div>
     <% @events.each do |event| %>
       <div class="reactangle-shape-card">
@@ -15,3 +16,9 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+</script>
