@@ -2,7 +2,7 @@
   <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
     <h1 class='align-center-text'>Create Employee Request</h1>
     <br>
-    <%= form_for :employee_request, url: employee_requests_path do |f| %>
+    <%= form_for :employee_request, url: employee_requests_path, html:{id: 'employee-request-form'} do |f| %>
       <% if @employee_request.errors.any? %>
         <div id="error_explanation">
           <h4><%= pluralize(@employee_request.errors.count, "error") %> prohibited this user from being saved:</h4>
