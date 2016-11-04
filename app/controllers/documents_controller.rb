@@ -1,4 +1,7 @@
 class DocumentsController < ApplicationController
+
+  before_filter :authenticate_user!
+  
   def index
     @document = Document.new
     @documents = Document.all

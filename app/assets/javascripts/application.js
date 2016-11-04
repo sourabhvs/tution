@@ -18,12 +18,15 @@
 //= require jquery.parallax-1.1.3
 //= require jquery.fancybox.pack
 //= require jquery.mixitup.min
+//= require jquery.validate
 //= require bootstrap.min
 //= require jquery-countTo
 //= require jquery.appear
 //= require jquery.easing.min
 //= require wow.min
 //= require custom
+//= require registration
+//= require employee_request
 //= require utility
 //= require turbolinks
 //= require_tree .
