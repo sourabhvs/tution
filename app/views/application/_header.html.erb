@@ -14,7 +14,11 @@
       <ul class="nav navbar-nav navbar-custom">
         <li><a href="" onclick="newDoc()">Inspire Accadamy</a></li>
           <li class="about-position"><a href="#">About Us</a></li>
-          <li class=""><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <% if current_user.present? %>
+           <li class=""><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+          <li class=""><%= link_to "Log in", new_user_session_path %></li>
+          <% end %>
 
       </ul>
 

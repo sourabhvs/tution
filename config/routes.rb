@@ -28,6 +28,9 @@ Rails.application.routes.draw do
     get '/users/:id' => 'users#show', :as => :users_show
     delete '/users/:id' => 'users#destroy', :as => :users_delete
 
+    get 'contact', to: 'messages#new', as: 'contact'
+    post 'contact', to: 'messages#create'
+
   # Example resource route with options:
   #   resources :products do
   #     member do

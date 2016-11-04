@@ -12,54 +12,47 @@
     <div id="preloader">
       <img src="/assets/preloader.gif" alt="Preloader">
     </div>
-    <!-- end preloader -->
 
-        <!--
-        Fixed Navigation
-        ==================================== -->
-        <header id="navigation" class="navbar-fixed-top navbar">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-bars fa-2x"></i>
-                    </button>
-          <!-- /responsive nav button -->
-
-          <!-- logo -->
-                    <a class="navbar-brand" href="#body">
-            <h1 id="logo">
-              <img src="/assets/logo.png" alt="Brandi">
-            </h1>
+    <nav class="navbar navbar-inverse navbar-static-top navbar-inverse-custom" data-spy="affix">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#">
+            <img src="<%#= asset_path("navtab-logo.png") %>" class="img-responsive">
           </a>
-          <!-- /logo -->
-                </div>
+        </div>
+        <div class="collapse navbar-collapse fill-the-gap" id="myNavbar">
+          <ul id="nav" class="nav navbar-nav navbar-custom-overide">
+            <li><a href="" onclick="newDoc()">Inspire Accadamy</a></li>
+            <li class="alingn-header-ele"><a href="#features">Features</a></li>
+            <li><a href="#works">Work</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <% if current_user.present? %>
+              <li class=""><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            <li class=""><%= link_to "Log in", new_user_session_path %></li>
+            <% end%>
 
-        <!-- main nav -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                    <ul id="nav" class="nav navbar-nav">
-                        <li class="current"><a href="#body">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#works">Work</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-        <!-- /main nav -->
+          </ul>
 
-            </div>
-        </header>
+        </div>
+      </div>
+    </nav>
 
-        <!--
-        End Fixed Navigation
-        ==================================== -->
+    <!--
+    End Fixed Navigation
+    ==================================== -->
 
 
 
-        <!--
-        Home Slider
-        ==================================== -->
+    <!--
+    Home Slider
+    ==================================== -->
 
     <section id="slider">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -78,10 +71,7 @@
           <div class="item active" style="background-image: url(/assets/banner.jpg);">
             <div class="carousel-caption">
               <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated"><a href="<%= new_workshop_request_path %>">Workshop Request!</a></h2>
-              <!-- <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
-              <p data-wow-duration="1000ms" class="wow slideInRight animated">We are a team of professionals</p>
 
- -->
                <% if user_signed_in? %>
                   Logged in as <strong><%= current_user.email %></strong>.
                   <h4><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></h4>
@@ -103,8 +93,7 @@
           <div class="item" style="background-image: url(/assets/banner.jpg);">
             <div class="carousel-caption">
               <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated"><a href="<%= new_workshop_request_path %>">Workshop Request!</a></h2>
-              <!-- <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/creative</span> one page template.</h3>
-              <p data-wow-duration="500ms" class="wow slideInRight animated">We are a team of professionals</p> -->
+
               <% if user_signed_in? %>
                   Logged in as <strong><%= current_user.email %></strong>.
                   <h4><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></h4>
@@ -418,14 +407,6 @@
         End Meet Our Team
         ==================================== -->
 
-    <!--
-        Some fun facts
-        ==================================== -->
-
-        <!--
-        End Some fun facts
-        ==================================== -->
-
 
     <!--
         Contact Us
@@ -459,36 +440,30 @@
           <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="300ms">
             <div class="contact-form">
               <h3>Say hello!</h3>
-              <form action="#" id="contact-form">
+              <%= form_for @message, url: contact_path, id: "contact-form" do |message_form| %>
                 <div class="input-group name-email">
                   <div class="input-field">
-                    <input type="text" name="name" id="name" placeholder="Name" class="form-control">
+                    <%= message_form.text_field :name, placeholder: "Name", class: "form-control" %>
                   </div>
                   <div class="input-field">
-                    <input type="email" name="email" id="email" placeholder="Email" class="form-control">
+                    <%= message_form.text_field :email, placeholder: "Email", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="input-group name-email">
+                  <div class="input-field">
+                    <%= message_form.text_field :phone_number, placeholder: "Phone", class: "form-control" %>
                   </div>
                 </div>
                 <div class="input-group">
-                  <textarea name="message" id="message" placeholder="Message" class="form-control"></textarea>
+                  <%= message_form.text_area :content, placeholder: "Content", class: "form-control" %>
                 </div>
                 <div class="input-group">
-                  <input type="submit" id="form-submit" class="pull-right" value="Send message">
+                  <%= message_form.submit 'Send', class: "btn btn-normal pull-right"%>
                 </div>
-              </form>
+              <% end %>
             </div>
           </div>
           <!-- end contact form -->
-
-          <!-- footer social links -->
-          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 wow fadeInRight animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <ul class="footer-social">
-              <li><a href="https://www.behance.net/Themefisher"><i class="fa fa-behance fa-2x"></i></a></li>
-              <li><a href="https://www.twitter.com/Themefisher"><i class="fa fa-twitter fa-2x"></i></a></li>
-              <li><a href="https://dribbble.com/themefisher"><i class="fa fa-dribbble fa-2x"></i></a></li>
-              <li><a href="https://www.facebook.com/Themefisher"><i class="fa fa-facebook fa-2x"></i></a></li>
-            </ul>
-          </div>
-          <!-- end footer social links -->
 
         </div>
       </div>
@@ -508,55 +483,19 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
+          <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms">
             <div class="footer-single">
               <img src="/assets/footer-logo.png" alt="">
               <p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </div>
 
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-            <div class="footer-single">
-              <h6>Subscribe </h6>
-              <form action="#" class="subscribe">
-                <input type="text" name="subscribe" id="subscribe">
-                <input type="submit" value="&#8594;" id="subs">
-              </form>
-              <p>eusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <h3>About us</h3>
+            <p>Please join us and get good quality of education</p>
           </div>
 
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
-            <div class="footer-single">
-              <h6>Explore</h6>
-              <ul>
-                <li><a href="#">Inside Us</a></li>
-                <li><a href="#">Flickr</a></li>
-                <li><a href="#">Google</a></li>
-                <li><a href="#">Forum</a></li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="col-md-3 col-sm-6 col-xs-12 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
-            <div class="footer-single">
-              <h6>Support</h6>
-              <ul>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Market Blog</a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Pressroom</a></li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p class="copyright text-center">
-              Copyright © 2015 <a href="http://themefisher.com/">Themefisher</a>. All rights reserved. Designed & developed by <a href="http://themefisher.com/">Themefisher</a>
-            </p>
-          </div>
         </div>
       </div>
     </footer>
@@ -599,7 +538,10 @@
               required: true,
               email: true
             },
-            message: {
+            phone_number: {
+              required: true
+            },
+            content: {
               required: true
             }
           },
@@ -611,7 +553,7 @@
             email: {
               required: "no email, no message"
             },
-            message: {
+            content: {
               required: "um...yea, you have to write something to send this form.",
               minlength: "thats all? really?"
             }

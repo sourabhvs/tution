@@ -136,7 +136,20 @@ a:focus {
   text-decoration: none;
   margin: 0 50px 0 50px;
 }
+
+.navbar-nav.navbar-custom-overide > li > a {
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 10px 0 10px;
+}
 .navbar-nav.navbar-custom > li > a:hover {
+  text-decoration: underline;
+  color: #fff !important;
+    /*font-weight: 600;
+    margin: 0 47px 0 47px;*/
+}
+
+.navbar-nav.navbar-custom-overide > li > a:hover {
   text-decoration: underline;
   color: #fff !important;
     /*font-weight: 600;
@@ -149,4 +162,32 @@ a:focus {
 
 .about-position {
   margin-left: 500px;
+}
+
+.fix-color {
+  color: #99ccff;
+}
+.fix-document-position {
+  display:inline-block;
+  padding-right:100px;
+}
+.fix-padding-doc {
+  padding-top: 50px;
+}
+
+.chose-btn-fix {
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: #6fb3de;
+}
+.alingn-header-ele {
+  /*margin-left: 500px;*/
+  float: right;
+}
+.fill-the-gap {
+  margin-bottom: 15px;
+}
+
+.links-color-code {
+  color: blue;
 }

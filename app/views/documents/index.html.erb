@@ -2,18 +2,29 @@
   <div class="well" style="width: 100%;height: auto;">
     <h2 class='heading-fix'> List of Documents</h2>
     <div>
-      <a href="<%= root_path %>" class='btn btn-normal create-btn-position'>Back</a>
-
-      <%= form_for(@document, url: documents_path, :method => "POST", :html => {:multipart => true}) do |f| %>
-        <%= f.file_field :report, multiple: true %>
-        <%= f.submit %>
-      <% end %>
-      <ul style="width:20%; float:left;">
-      <% @documents.each do |d| %>
-
-        <li><%= link_to ('<i class="fa fa-file-text fa-5x" aria-hidden="true"></i></br>').html_safe + d.report_identifier, d.report.url, :style => 'text-decoration: none;', target: "_blank" %></li>
-      <% end %>
-      </ul>
+      <a href="" onclick="newDoc()" class='btn btn-normal create-btn-position'>Back</a>
+      <div>
+        <% if current_user.roles.last.name == "Admin"%>
+          <%= form_for(@document, url: documents_path, :method => "POST", :html => {:multipart => true}) do |f| %>
+            <%= f.file_field :report, multiple: true %>
+            <%= f.submit "Submit", class: "chose-btn-fix btn btn-normal" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="fix-padding-doc">
+        <ul >
+          <% @documents.each do |d| %>
+            <li class="fix-document-position"><%= link_to ('<i class="fa fa-file-text fa-5x fix-color" aria-hidden="true"></i></br>').html_safe + d.report_identifier, d.report.url, :style => 'text-decoration: none;', target: "_blank" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+</script>
