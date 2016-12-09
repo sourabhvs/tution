@@ -1,0 +1,20 @@
+<%= render :partial => "header" %>
+<div class="container">
+  <div class="well" style="width: 100%;height: auto;">
+    <h2 class='heading-fix'>Tution Request</h2>
+    <div>
+      <a href="<%= apply_tutions_path %>" class='btn btn-normal create-btn-position'>Back</a>
+    </div>
+    <ul class="fix-distance-show-school">
+      <li><b>Name:</b> <%= @apply_tution.name %></li></br>
+      <li><b>Place:</b> <%= @apply_tution.place %></li></br>
+      <li><b>Telephone:</b> <%= @apply_tution.telephone %></li></br>
+      <li><b>Collage:</b> <%= @apply_tution.collage %></li></br>
+      <li><b>Class:</b> <%= @apply_tution.s_class %></li></br>
+      <li><b>Percentage:</b> <%= @apply_tution.percentage %></li></br>
+      <li><b>Tution Name:</b> <%= @apply_tution.event.name if @apply_tution.event.present?%></li></br>
+      <li><b>Tution Type:</b> <%= @apply_tution.event.exam_type if @apply_tution.event.present? %></li></br>
+      <li><b>Description:</b> <%= @apply_tution.description %></li></br>
+    </ul>
+  </div>
+</div>

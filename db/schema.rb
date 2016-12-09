@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103164131) do
+ActiveRecord::Schema.define(version: 20161110064129) do
+
+  create_table "apply_tutions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "collage"
+    t.string   "s_class"
+    t.string   "percentage"
+    t.string   "telephone"
+    t.string   "place"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "event_id"
+  end
 
   create_table "documents", force: :cascade do |t|
     t.string   "report"
@@ -39,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161103164131) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "done",        default: false
+    t.string   "exam_type"
   end
 
   create_table "messages", force: :cascade do |t|

@@ -1,0 +1,42 @@
+<%= render :partial => "header" %>
+<div class="container">
+  <div class="well" style="width: 100%;height: auto;margin-top: -15px;">
+    <h2 class='heading-fix'> List of Compitative Tution Entries</h2>
+    <div>
+      <a href="<%= admin_path %>" class='btn btn-normal create-btn-position'>Back</a>
+    </div>
+
+    <div class="table-responsive list-view div-documents-list-section fix-position-table table-margin-top">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <!-- <th class="entry-num">Entry Number</th> -->
+            <th class="date">Name</th>
+            <th class="name">Collage</th>
+            <th class="name">Class</th>
+            <th class="document-title" style="padding-right:40px;">Telephone</th>
+            <th class="status">Place</th>
+            <th class="status">Percentage</th>
+            <th class="status">Tution</th>
+            <th class="action">Action</th>
+          </tr>
+        </thead>
+        <tbody class="table-body-background change-font">
+          <% @tutions.each do |tution| %>
+            <tr>
+              <td><%= tution.name %></td>
+              <td><%= tution.collage %></td>
+              <td><%= tution.s_class %></td>
+              <td><%= tution.telephone %></td>
+              <td><%= tution.place %></td>
+              <td><%= tution.percentage %></td>
+              <td><%= tution.event.name if tution.event.present? %></td>
+              <td><%= link_to 'Delete', apply_tution_path(tution), method: :delete, data:{confirm: 'Are you want to delete tution'}, :class=> "text-color-fix" %> | <%= link_to 'Show', apply_tution_path(tution), :class=> 'text-color-fix' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

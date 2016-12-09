@@ -27,15 +27,16 @@
         </div>
         <div class="collapse navbar-collapse fill-the-gap" id="myNavbar">
           <ul id="nav" class="nav navbar-nav navbar-custom-overide">
-            <li><a href="" onclick="newDoc()">Inspire Accadamy</a></li>
-            <li class="alingn-header-ele"><a href="#features">Features</a></li>
-            <li><a href="#works">Work</a></li>
+            <li><a href="" onclick="newDoc()">Inspire Academy</a></li>
+            <li class="alingn-header-ele"><a href="#features">Tutorials</a></li>
+            <li class="alingn-header-ele"><a href="#hiring">Careers</a></li>
+            <li><a href="#works">Gallery</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
             <% if current_user.present? %>
               <li class=""><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
             <% else %>
-            <li class=""><%= link_to "Log in", new_user_session_path %></li>
+              <li class=""><%#= link_to "Login", new_user_session_path %></li>
             <% end%>
 
           </ul>
@@ -131,12 +132,12 @@
         <div class="row">
 
           <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
-            <h2>Features</h2>
+            <h2>Tutorials</h2>
             <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
           </div>
 
           <!-- service item -->
-          <div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+          <div class="col-md-6 wow fadeInLeft" data-wow-duration="500ms">
             <div class="service-item">
               <div class="service-icon">
                 <i class="fa fa-github fa-2x"></i>
@@ -155,7 +156,7 @@
           <!-- end service item -->
 
           <!-- service item -->
-          <div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+          <div class="col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
             <div class="service-item">
               <div class="service-icon">
                 <i class="fa fa-pencil fa-2x"></i>
@@ -167,22 +168,6 @@
               </div>
             </div>
           </div>
-          <!-- end service item -->
-
-          <!-- service item -->
-          <div class="col-md-4 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
-            <div class="service-item">
-              <div class="service-icon">
-                <i class="fa fa-bullhorn fa-2x"></i>
-              </div>
-
-              <div class="service-desc">
-                <a href="<%= new_employee_request_path%>"><h3>Employee Request</h3></a>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>
-              </div>
-            </div>
-          </div>
-          <!-- end service item -->
 
         </div>
       </div>
@@ -191,8 +176,33 @@
         <!--
         End Features
         ==================================== -->
+    <section id="hiring" class="features">
+      <div class="container">
+        <div class="row">
+          <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+            <h2>Careers</h2>
+            <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+          </div>
 
+          <div class="col-md-3 wow fadeInLeft" data-wow-duration="500ms"  data-wow-delay="900ms">
+          </div>
+          <div class="col-md-6 wow fadeInUp" data-wow-duration="500ms"  data-wow-delay="900ms">
+            <div class="service-item">
+              <div class="service-icon">
+                <i class="fa fa-bullhorn fa-2x"></i>
+              </div>
 
+              <div class="service-desc">
+                <a href="<%= new_employee_request_path%>"><h3>We are Hiring..</h3></a>
+                <p>Please send your information if you want to be a part of us, we will contact you soon.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 wow fadeInRight" data-wow-duration="500ms"  data-wow-delay="900ms">
+          </div>
+        </div>
+      </div>
+    </section>
         <!--
         Our Works
         ==================================== -->
@@ -202,7 +212,7 @@
         <div class="row">
 
           <div class="sec-title text-center">
-            <h2>Works</h2>
+            <h2>Galary</h2>
             <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
           </div>
 

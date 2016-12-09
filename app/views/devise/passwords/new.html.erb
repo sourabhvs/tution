@@ -26,7 +26,7 @@
               </div>
               <div class="col-xs-4">
                 <div class="form-group">
-                  <%= link_to "Cancel", root_path, :class=>"btn btn-danger" %>
+                  <a herf="" onclick="newDoc()" class="btn btn-danger" >Cancel</a>
                 </div>
               </div>
             </div>
@@ -38,3 +38,9 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
+<script>
+  function newDoc() {
+    window.location.assign("<%= root_url%>")
+}
+</script>

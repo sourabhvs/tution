@@ -1,14 +1,15 @@
 <%= render :partial => "header" %>
 <div class="container fix-width-container">
   <div class="well" style="width: 100%;margin-top: 154px;height: auto;">
-    <h1 class='align-center-text'>Workshop Request</h1>
+    <h1 class='align-center-text'>Apply Tution</h1>
     <br>
-    <%= form_for :workshop_request, url: workshop_requests_path do |f| %>
-      <% if @workshop_request.errors.any? %>
+    <%= form_for :apply_tution, url: apply_tutions_path, html:{id: 'apply-tution-form' } do |f| %>
+    <%= f.hidden_field :event_id, :value => params[:format] %>
+      <% if @apply_tution.errors.any? %>
         <div id="error_explanation">
-          <h4><%= pluralize(@workshop_request.errors.count, "error") %> prohibited this user from being saved:</h4>
+          <h4><%= pluralize(@apply_tution.errors.count, "error") %> prohibited this user from being saved:</h4>
           <ul>
-            <% @workshop_request.errors.full_messages.each do |msg| %>
+            <% @apply_tution.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
           </ul>
@@ -28,8 +29,18 @@
       <div class="row">
         <div class="form-group">
           <div class="col-sm-12">
-            <%= f.label :email %>
-            <%= f.text_field :email, class: 'form-control' %>
+            <%= f.label :collage %>
+            <%= f.text_field :collage, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :class %>
+            <%= f.select :s_class, options_for_select(get_class_names), class: 'form-control' %>
           </div>
         </div>
       </div>
@@ -46,8 +57,26 @@
       <div class="row">
         <div class="form-group">
           <div class="col-sm-12">
-            <%= f.label :collage %>
-            <%= f.text_field :collage, class: 'form-control' %>
+            <%= f.label :place %>
+            <%= f.text_field :place, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :percentage %>
+            <%= f.text_field :percentage, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: 'form-control' %>
           </div>
         </div>
       </div>
@@ -61,7 +90,7 @@
           </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <a herf="" onclick="newDoc()" class="btn btn-danger" >Cancel</a>
+              <a herf="" onclick="newDoc()"class="btn btn-danger" >Cancel</a>
             </div>
           </div>
         </div>
@@ -77,3 +106,4 @@
     window.location.assign("<%= root_url%>")
 }
 </script>
+

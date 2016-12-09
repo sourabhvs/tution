@@ -1,6 +1,6 @@
 <%= render :partial => "header" %>
 <div class="container fix-width-container">
-  <div class="well" style="width: 100%;margin-top: 100px;height: auto;">
+  <div class="well" style="width: 100%;margin-top: 150px;height: auto;">
     <h1 class='align-center-text'>Create New Event</h1>
     <br>
     <%= form_for :event, url: events_path, method: :post do |f| %>
@@ -28,8 +28,8 @@
       <div class="row">
         <div class="form-group">
           <div class="col-sm-12">
-            <%= f.label :place %>
-            <%= f.text_field :place, class: 'form-control' %>
+            <%= f.label :exam_type %>
+            <%= f.select :exam_type, options_for_select(get_exam_type), class: 'form-control' %>
           </div>
         </div>
       </div>
@@ -43,24 +43,24 @@
         </div>
       </div>
       <br>
-      <div class="row">
+      <!-- <div class="row">
         <div class="form-group">
           <div class="col-sm-12">
-            <%= f.label :time %>
-            <%= f.text_field :time, class: 'form-control' %>
+            <%#= f.label :time %>
+            <%#= f.text_field :time, class: 'form-control' %>
           </div>
         </div>
       </div>
-      <br>
-      <div class="row">
+      <br> -->
+      <!-- <div class="row">
         <div class="form-group">
           <div class="col-sm-12">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control' %>
+            <%#= f.label :description %>
+            <%#= f.text_area :description, class: 'form-control' %>
           </div>
         </div>
       </div>
-      <br>
+      <br> -->
       <div class="container-fluid">
         <div class="row" style="margin-left: 80px;">
           <div class="col-xs-6">
@@ -70,7 +70,7 @@
           </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <%= link_to "Cancel", root_path, :class=>"btn btn-danger" %>
+              <%= link_to "Cancel", events_path, :class=>"btn btn-danger" %>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 class DocumentsController < ApplicationController
 
   before_filter :authenticate_user!
-  
+
   def index
     @document = Document.new
     @documents = Document.all
@@ -11,6 +11,12 @@ class DocumentsController < ApplicationController
     @document = Document.new
     @document.report = params["document"]["report"].first
     @document.save
+    redirect_to documents_path
+  end
+
+  def destroy
+    @document = Document.find(params[:id])
+    @document.destroy
     redirect_to documents_path
   end
 
