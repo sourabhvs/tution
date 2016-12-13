@@ -7,10 +7,10 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.valid?
       MessageMailer.new_message(@message, message_params[:email]).deliver
-      redirect_to root_path, notice: "Your messages has been sent."
+      redirect_to root_path
     else
-      flash[:alert] = "An error occurred while delivering this message."
-      redirect_to root_path, error: "Your messages not sent."
+      # flash[:alert] = "An error occurred while delivering this message."
+      redirect_to root_path
     end
   end
 
