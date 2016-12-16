@@ -223,7 +223,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-validation-rails
-  pg (~> 0.17.1)
+  pg
   pry
   rails (= 4.2.4)
   rolify
