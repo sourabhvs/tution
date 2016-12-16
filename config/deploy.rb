@@ -24,6 +24,7 @@ set :bundle_bins, %w(gem rake rails)
 set :whenever_roles, :all
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 set :log_level, :debug
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 namespace :deploy do
 
